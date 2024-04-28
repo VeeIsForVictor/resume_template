@@ -45,8 +45,8 @@
   )
   
   set text(
-    font: "Changa",
-    size: 11.5pt
+    font: "Fira Sans",
+    size: 11.2pt
   )
 
   show link: it => underline(text(
@@ -54,7 +54,7 @@
     ))
   block[
     #align(center)[
-      #block(text(weight: 700, 3em)[#smallcaps(author)])
+      #block(text(weight: 700, 3em)[#author])
       #linebreak()
       #block(width: auto, height: 5%)[
         #grid(
@@ -75,7 +75,8 @@
   name: ""
 ) = {
   set text(
-    fill: rgb("1a4674")
+    fill: rgb("1a4674"),
+    weight: "bold"
   )
 
   [= #name]
