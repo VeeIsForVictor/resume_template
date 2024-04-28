@@ -34,29 +34,35 @@
   set page(
     margin: (
       top: 1.25cm,
-      bottom: 0cm,
+      bottom: 1.25cm,
       left: 1.5cm,
       right: 1.5cm,
-    )
+    ),
+    footer: align(right)[
+      #set text(size: 10pt)
+      This resume was made using #link("https://typst.app")[Typst] with a #link("https://github.com/VeeIsForVanana/resume_template")[template] by Victor Edwin Reyes
+    ]
   )
   
   set text(
-    font: "Fira Sans"
+    font: "Changa",
+    size: 11.5pt
   )
 
   show link: it => underline(text(
       fill: rgb("#0645AD"), [#it]
     ))
-
-  align(center)[
-    #block(text(weight: 700, 3em)[#smallcaps(author)])
-    #linebreak()
-    #block(width: auto, height: 5%)[
-      #grid(
-        columns: (1fr, 1fr, 1fr, 1fr),
-        column-gutter: 5%,
-        ..contacts.map(contact_box)
-      )
+  block[
+    #align(center)[
+      #block(text(weight: 700, 3em)[#smallcaps(author)])
+      #linebreak()
+      #block(width: auto, height: 5%)[
+        #grid(
+          columns: (1fr, 1fr, 1fr, 1fr),
+          column-gutter: 5%,
+          ..contacts.map(contact_box)
+        )
+      ]
     ]
   ]
 
@@ -68,8 +74,12 @@
 #let section(
   name: ""
 ) = {
+  set text(
+    fill: rgb("1a4674")
+  )
+
   [= #name]
-  line(length: 100%, stroke: 0.5pt)
+  line(length: 100%, stroke: 0.5pt + rgb("ffe052"))
 }
 
 // education section
