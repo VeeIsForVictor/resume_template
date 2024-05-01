@@ -3,18 +3,22 @@
 #let contact_box(
   body
 ) = {
-  set text(
-    size: 0.85em,
-  )
-
-  box(
-    width: 100%,
-    height: auto,
-    fill: rgb("f2f2f2"),
-    radius: 20%,
-    outset: 11pt,
-    body
-  )
+  align(horizon)[
+    #set text(
+      size: 0.85em,
+    )
+    #box(
+      width: 70%,
+      height: auto,
+      fill: rgb("f2f2f2"),
+      radius: 20%,
+      outset: 11pt,
+    )[
+      #align(left)[
+        #body
+      ]
+    ]
+  ]
 }
 
 // document-wide template
@@ -22,7 +26,8 @@
   author: "",
   doccode: "4",
   subtitle: "",
-  contacts: (0,),
+  contacts-l: (0,),
+  contacts-r: (0,),
   body
 ) = {
   set document(
@@ -39,8 +44,16 @@
       right: 1.5cm,
     ),
     footer: align(right)[
-      #set text(size: 10pt)
-      This resume was made using #link("https://typst.app")[Typst] with a #link("https://github.com/VeeIsForVanana/resume_template")[template] by Victor Edwin Reyes
+      #block(
+        fill: rgb(26, 70, 116, 65%),
+        width: 100%,
+        height: 100%,
+        inset: 1%
+      )[
+        #set text(size: 10pt)
+        #set align(horizon)
+        This resume was made using #link("https://typst.app")[Typst] with a #link("https://github.com/VeeIsForVanana/resume_template")[template] by Victor Edwin Reyes
+      ]
     ]
   )
   
@@ -54,13 +67,16 @@
     ))
   block[
     #align(center)[
-      #block(text(weight: 700, 3em)[#author])
+      #block(text(weight: 700, 3em)[#smallcaps(author)])
       #linebreak()
       #block(width: auto, height: 5%)[
         #grid(
-          columns: (1fr, 1fr, 1fr, 1fr),
-          column-gutter: 5%,
-          ..contacts.map(contact_box)
+          columns: (1fr, 1fr),
+          rows: (1fr, 1fr),
+          column-gutter: 1%,
+          row-gutter: 4fr,
+          ..contacts-l.map(contact_box),
+          ..contacts-r.map(contact_box),
         )
       ]
     ]
