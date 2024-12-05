@@ -110,7 +110,7 @@
   grid(
     columns: (1fr, 4fr),
     align(left)[
-      #block(stroke: (right: 4pt + rgb("ffe052"), rest: none), width: 100%)[
+      #block(width: 100%)[
         #set text(
           fill: rgb("1a4674"),
           weight: "bold"
