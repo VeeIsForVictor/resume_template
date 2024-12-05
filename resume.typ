@@ -103,6 +103,27 @@
   line(length: 100%, stroke: 0.5pt + rgb("ffe052"))
 }
 
+#let section2col(
+  name: "",
+  body
+) = {
+  grid(
+    columns: (1fr, 4fr),
+    align(left)[
+      #block(stroke: (right: 4pt + rgb("ffe052"), rest: none), width: 100%)[
+        #set text(
+          fill: rgb("1a4674"),
+          weight: "bold"
+        )
+        = #name
+      ]
+    ],
+    align(left)[
+      #body
+    ]
+  )
+}
+
 // education section
 
 #let edu(
