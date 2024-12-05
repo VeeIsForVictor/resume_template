@@ -168,8 +168,8 @@
 // For a short-form resume, we would prefer presenting our work as *experience*
 
 #let exp(
-  position: "",
-  organization: "",
+  position: [],
+  organization: [],
   duration: "",
   url: "",
   body
@@ -191,10 +191,9 @@
 // For a long-form submission or academicia, we would prefer presenting our work as *projects*
 
 #let proj(
-  name: "",
+  name: [],
   duration: "",
   stack: "",
-  url: "",
   body
 ) = {
   let stackText = {
