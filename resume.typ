@@ -164,6 +164,8 @@
 }
 
 // experience section
+// In the future, we understand *experience* to be a detailing of what *we did* for an organization, emphasizing the responsibilities of the role we take
+// For a short-form resume, we would prefer presenting our work as *experience*
 
 #let exp(
   position: "",
@@ -184,6 +186,8 @@
 }
 
 // projects section
+// In the future, we understand *projects* to be a detailing of what the projects *do*
+// For a long-form submission or academicia, we would prefer presenting our work as *projects*
 
 #let proj(
   name: "",
