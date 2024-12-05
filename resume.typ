@@ -108,7 +108,7 @@
   body
 ) = {
   grid(
-    columns: (1fr, 0.25fr, 4fr),
+    columns: (1fr, 0.01fr, 4fr),
     align(left)[
       #block(width: 100%)[
         #set text(
@@ -171,6 +171,7 @@
   position: "",
   organization: "",
   duration: "",
+  url: "",
   body
 ) = {
   grid(
@@ -193,6 +194,7 @@
   name: "",
   duration: "",
   stack: "",
+  url: "",
   body
 ) = {
   let stackText = {
@@ -204,10 +206,18 @@
     }
   }
 
+  let nameText = {
+    if url != "" {
+      link(url, text(weight: "bold")[#name])
+    } else {
+      name
+    }
+  }
+
   grid(
     columns: (auto, 1fr), 
     align(left)[
-      #strong[#name] #stackText
+      #nameText #stackText
     ], 
     align(right)[
       #emph[#duration]
