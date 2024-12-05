@@ -108,16 +108,17 @@
   body
 ) = {
   grid(
-    columns: (1fr, 4fr),
+    columns: (1fr, 0.25fr, 4fr),
     align(left)[
       #block(width: 100%)[
         #set text(
           fill: rgb("1a4674"),
           weight: "bold"
         )
-        = #name
+        == #name
       ]
     ],
+    [],
     align(left)[
       #body
     ]
