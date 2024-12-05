@@ -195,7 +195,7 @@
     if stack != "" {
       [:]
       for stackItem in stack {
-        [ #text(fill: rgb("#004909"))[#stackItem] |]
+        [#box(fill: luma(200), outset: (x: 3pt, y: 2pt), radius: 30%)[ #text(fill: rgb("#004909"))[#stackItem]] #h(5pt)]
       }
     }
   }
