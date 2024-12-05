@@ -68,7 +68,7 @@
     ))
   
   // main header part
-  block[
+  block(below: 25pt)[
     #align(center)[
       #block(text(weight: 700, 3em)[#smallcaps(author)], below: 1pt)
       #linebreak()
@@ -84,8 +84,6 @@
       ]
     ]
   ]
-  linebreak()
-
   body
 }
 
