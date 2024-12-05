@@ -65,6 +65,8 @@
   show link: it => underline(text(
       fill: rgb("#0645AD"), [#it]
     ))
+  
+  // main header part
   block[
     #align(center)[
       #block(text(weight: 700, 3em)[#smallcaps(author)])
