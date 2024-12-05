@@ -84,11 +84,12 @@
       ]
     ]
   ]
+  linebreak()
 
   body
 }
 
-// section headers
+// section headers and types
 
 #let section(
   name: ""
