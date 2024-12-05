@@ -193,7 +193,10 @@
 ) = {
   let stackText = {
     if stack != "" {
-      [| #text(fill: rgb("#004909"))[#stack]]
+      [:]
+      for stackItem in stack {
+        [ #text(fill: rgb("#004909"))[#stackItem] |]
+      }
     }
   }
 
