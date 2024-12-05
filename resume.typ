@@ -205,18 +205,10 @@
     }
   }
 
-  let nameText = {
-    if url != "" {
-      link(url, text(weight: "bold")[#name])
-    } else {
-      name
-    }
-  }
-
   grid(
     columns: (auto, 1fr), 
     align(left)[
-      #nameText #stackText
+      #strong[#name] #stackText
     ], 
     align(right)[
       #emph[#duration]
