@@ -188,12 +188,19 @@
 #let proj(
   name: "",
   duration: "",
+  stack: "",
   body
 ) = {
+  let stackText = {
+    if stack != "" {
+      [| #text(fill: rgb("#004909"))[#stack]]
+    }
+  }
+
   grid(
     columns: (auto, 1fr), 
     align(left)[
-      #strong[#name]
+      #strong[#name] #stackText
     ], 
     align(right)[
       #emph[#duration]
