@@ -8,11 +8,12 @@
       size: 0.85em,
     )
     #box(
-      width: 70%,
+      width: 85%,
       height: auto,
       fill: rgb("f2f2f2"),
       radius: 20%,
-      outset: 11pt,
+      outset: 8pt,
+      
     )[
       #align(left)[
         #body
@@ -69,14 +70,14 @@
   // main header part
   block[
     #align(center)[
-      #block(text(weight: 700, 3em)[#smallcaps(author)])
+      #block(text(weight: 700, 3em)[#smallcaps(author)], below: 1pt)
       #linebreak()
       #block(width: auto, height: 5%)[
         #grid(
           columns: (1fr, 1fr),
           rows: (1fr, 1fr),
           column-gutter: 1%,
-          row-gutter: 4fr,
+          row-gutter: 2fr,
           ..contacts-l.map(contact_box),
           ..contacts-r.map(contact_box),
         )
